@@ -26,7 +26,8 @@ cd cypress-poc
 ## install the node_modules
 npm install
 
-## npm run cypress:open
+## running tests
+npm run cypress:open
 
 ```
 
