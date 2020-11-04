@@ -10,9 +10,12 @@ describe('Search string and Print in Log', () => {
   });
 
   it('Search the page with string “test” and print out the search result in log', () => {
-    const log = Cypress.log(homePage.serachTest());
-    const l = Cypress.log(cy.get('body'));
-    const t = Cypress.log(cy.get('[ng-controller=mainCtrl]'));
+     const log = Cypress.log(homePage.serachTest());
+    cy.get('[ng-repeat="column in columns"]').each(($ele, i) => {
+      if ($ele.text === 'test') {
+        cy.log('Search Successful for ' + ($ele.text))
+      }
+    })
   });
 
 });
