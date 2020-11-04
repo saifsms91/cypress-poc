@@ -1,46 +1,41 @@
-export class AddUser
-{
+export class AddUser {
 
-  addFirstName(){
-    cy.get('thead > :nth-child(2) > td > .btn').click()
-    cy.get('[name=FirstName]').click().click().type('Ab').should('have.value', 'Ab')
+  addFirstName() {
+    cy.get('thead > :nth-child(2) > td > .btn').click();
+    cy.get('[name=FirstName]').click().click().type('Ab').should('have.value', 'Ab');
+  }
+
+  addLastName() {
+    cy.get('[name=LastName]').click().type('tt').should('have.value', 'tt');
+  }
+
+  addUserName() {
+    cy.get('[name=UserName]').click().type('add').should('have.value', 'add');
+  }
+
+  addPassword() {
+    cy.get('[name=Password]').click().type('abc').should('have.value', 'abc');
 
   }
 
-  addLastName(){
-     cy.get('[name=LastName]').click().type('tt').should('have.value', 'tt')
+  mobileNumber() {
+
+    cy.get('[name=Mobilephone]').click().type('eeeeeeee').should('have.value', 'eeeeeeee');
   }
 
-addUserName()
-{   cy.get('[name=UserName]').click().type('add').should('have.value', 'add')
-}
+  selectSalesTeam() {
+    cy.get('[name=RoleId]').select('Sales Team');
+  }
 
-addPassword()
-{
-  cy.get('[name=Password]').click().type('abc').should('have.value', 'abc')
+  enterEmail() {
 
-}
+    cy.get('[name=Email]').click().type('sa@ss.ff').should('have.value', 'sa@ss.ff');
 
-  mobileNumber(){
+  }
 
-    cy.get('[name=Mobilephone]').click().type('eeeeeeee').should('have.value', 'eeeeeeee')
-}
+  saveButton() {
 
-  selectSalesTeam(){
-  cy.get('[name=RoleId]').select('Sales Team')
-}
-
-enterEmail(){
-
-
-  cy.get('[name=Email]').click().type('sa@ss.ff').should('have.value', 'sa@ss.ff')
-
-}
-
-saveButton(){
-
-  cy.get('.btn-success').click()
-}
-
+    cy.get('.btn-success').click();
+  }
 
 }
